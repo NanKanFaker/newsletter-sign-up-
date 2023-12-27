@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    color: #23242c;
+}
+
+:root {
+    /*width*/
+    --Desktop-width: 1440px;
+    --Mobile-width: 375px;
+
+    /* color */
+    --Tomato: rgb(255, 98, 87);
+    --Dark-Slate-Grey: rgb(36, 39, 66);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+    font-size: 16px;
+}
+
+
+body{
+    min-height: 100dvh;
+    background-color: var(--Charcoal-Grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    width: var(--Desktop-width);
+    background-color: var(--White);
+    display: flex;
+    padding: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,.6)
+}
+
+.newsletter{
+    flex: 1;
+    text-align: left;
+    padding: 50px 30px;
+}
+
+
+.newsletter .title h1{
+    font-size: 2rem;
+    padding: 10px 0;
+    font-weight: 700;
+}
+.newsletter .title h2{
+    font-size: 1rem;
+    padding: 10px 0;
+    font-weight: 400;
+}
+
+
+.newsletter .list{
+    padding: 10px 0;
+}
+.newsletter .list li{
+    font-weight: 400;
+    padding: 5px 0;
+    list-style-type: none;
+    padding-left: 1.8rem;
+    position: relative;
+}
+.newsletter .list li::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url("assets/images/icon-list.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.newsletter .subscribe{
+    padding: 10px 0;
+}
+.newsletter .subscribe h4{
+    font-size: 0.7rem;
+    padding: 10px 0;
+    font-weight: 700;
+    position: relative;
+}
+.newsletter .subscribe input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: var(--Grey) 1px solid;
+    box-shadow: 0 0 5px rgba(0,0,0,.2)
+}
+.newsletter .subscribe input:focus{
+    outline: .5px solid #23242c;
+    
+}
+.newsletter .subscribe button{
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: var(--Dark-Slate-Grey);
+    color: var(--White);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 10px rgba(36, 39, 66,.5);
+}
+.newsletter .subscribe button:active{
+    background-color: var(--Tomato);
+    box-shadow: 0 10px 10px rgba(255,98,87,.5);
+}
+
+
+
+.picture{
+    flex: 1;
+    background-image: url("assets/images/illustration-sign-up-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+.success{
+    padding: 30px;
+    width: var(--Mobile-width);
+}
+.success img{
+    width: 3rem;
+    margin: 20px 0;
+}
+.success h1{
+    font-size: 3rem;
+}
+.success p{
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+.success p span{
+    font-weight: 700;
+}
+.success button{
+    width: 100%;
+    background-color: var(--Dark-Slate-Grey);
+    color: var(--White);
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 10px rgba(36, 39, 66,.5);
+    margin-bottom: 20px;
+}
+.success button:active{
+    background-color: var(--Tomato);
+    box-shadow: 0 10px 10px rgba(255,98,87,.5);
+}
+
+.block{
+    display: none;
+}
+
+.error{
+    border: solid 1px var(--Tomato) !important;
+    background-color: rgba(255,98,87,.2);
+}
+
+.wrong_email{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    color: var(--Tomato);
+}
+
+@media screen and (max-width: 576px){
+    .main{
+        max-width: var(--Mobile-width);
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .picture{
+        min-height: 200px;
+        border-radius: 0 0 15px 15px;
+    }
+}
